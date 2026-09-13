@@ -47,7 +47,7 @@ function App() {
 
               <a
                 className="button secondary"
-                href="/jamesignas/files/CV_JamesIgnas.pdf"
+                href="/jamesignas/public/CV_JamesIgnas.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
