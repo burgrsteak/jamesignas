@@ -19,9 +19,16 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
+  padding-bottom: env(safe-area-inset-bottom);
   background:
     radial-gradient(circle at 8% 5%, rgba(151, 118, 255, 0.21), transparent 28rem),
     radial-gradient(circle at 95% 18%, rgba(97, 221, 255, 0.14), transparent 26rem),
@@ -84,6 +91,7 @@ a {
 
 .button {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   padding: 12px 17px;
@@ -116,11 +124,11 @@ a {
   padding: 102px 0 72px;
 }
 
-.hero .container,
-#contac .containet{
+.hero .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .eyebrow {
@@ -137,13 +145,14 @@ a {
 .dot {
   width: 9px;
   height: 9px;
+  flex: 0 0 auto;
   border-radius: 50%;
   background: var(--lime);
   box-shadow: 0 0 0 5px rgba(192, 244, 122, 0.13);
 }
 
 h1 {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 18px 0 20px;
   font-size: clamp(3rem, 8vw, 6.7rem);
   letter-spacing: -0.078em;
@@ -167,15 +176,18 @@ h1 {
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 29px;
 }
 
 .hero-grid {
   display: grid;
+  width: 100%;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 18px;
   margin-top: 72px;
+  text-align: left;
 }
 
 .proof,
@@ -480,12 +492,16 @@ h2 {
 }
 
 .contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: clamp(31px, 6vw, 70px);
   border: 1px solid rgba(97, 221, 255, 0.35);
   border-radius: 26px;
   background:
     radial-gradient(circle at 80% 0%, rgba(97, 221, 255, 0.16), transparent 25rem),
     linear-gradient(135deg, rgba(151, 118, 255, 0.2), rgba(18, 22, 32, 0.92) 58%);
+  text-align: center;
 }
 
 .contact-box h2 {
@@ -499,7 +515,7 @@ h2 {
 }
 
 footer {
-  padding: 26px 0 41px;
+  padding: 26px 0 calc(41px + env(safe-area-inset-bottom));
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.89rem;
@@ -512,18 +528,64 @@ footer {
 }
 
 @media (max-width: 760px) {
+  .container {
+    width: min(100% - 32px, 1140px);
+  }
+
+  .nav {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .nav-inner {
+    min-height: 64px;
+  }
+
   .nav-links {
     display: none;
   }
 
+  section {
+    padding: 64px 0;
+  }
+
   .hero {
-    padding-top: 73px;
+    padding: 64px 0 48px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.7rem, 14vw, 4.3rem);
+    letter-spacing: -0.065em;
+    line-height: 0.98;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .hero-grid,
   .about,
   .capabilities {
     grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 14px;
+    margin-top: 48px;
+  }
+
+  .proof,
+  .focus {
+    padding: 21px;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    padding: 14px;
   }
 
   .heading {
@@ -540,20 +602,61 @@ footer {
 
   .card,
   .card.large {
-    min-height: 400px;
+    min-height: auto;
     margin-bottom: 16px;
+    padding: 21px;
+  }
+
+  .card-top {
+    align-items: flex-start;
+    font-size: 0.76rem;
   }
 
   .mock,
   .large .mock {
-    right: -22px;
-    width: 70%;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 175px;
+    margin: 24px 0;
+    transform: none;
   }
 
   .card h3,
   .large h3 {
-    margin-top: 160px;
-    font-size: 1.55rem;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .capabilities {
+    gap: 12px;
+  }
+
+  .capability {
+    padding: 20px;
+  }
+
+  .about {
+    gap: 32px;
+  }
+
+  .skill {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .skill span {
+    text-align: left;
+  }
+
+  .contact {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .contact-box {
+    padding: 30px 22px;
   }
 
   .footer-inner {
@@ -565,46 +668,28 @@ footer {
   }
 }
 
-/* Consistent centered presentation for the hero section */
-.hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+@media (max-width: 420px) {
+  .container {
+    width: min(100% - 24px, 1140px);
+  }
 
-.hero h1 {
-  max-width: 900px;
-  text-align: center;
-}
+  .actions,
+  .contact-box .actions {
+    width: 100%;
+    flex-direction: column;
+  }
 
-.hero .intro {
-  text-align: center;
-}
+  .button {
+    width: 100%;
+    min-height: 48px;
+  }
 
-.hero .actions {
-  justify-content: center;
-}
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.07em;
+  }
 
-/* Consistent centered presentation for the contact card */
-.contact-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.contact-box h2,
-.contact-box p {
-  text-align: center;
-}
-
-.contact-box .actions {
-  justify-content: center;
-}
-
-@media (max-width: 760px) {
   .hero h1 {
-    max-width: 100%;
+    font-size: clamp(2.45rem, 14vw, 3.35rem);
   }
 }
