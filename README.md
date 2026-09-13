@@ -30,9 +30,9 @@ I have experience supporting advertising operations and measurement activities, 
 - Signal-integrity review
 - Conversion API validation
 
-### Snap Pixel implementation
+### Pixel implementation
 
-I support Snap Pixel implementation and onboarding through:
+I support Pixel implementation and onboarding through:
 
 - Manual pixel integration
 - Google Tag Manager
