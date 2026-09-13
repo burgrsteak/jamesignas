@@ -262,7 +262,7 @@ function App() {
               </div>
               <div className="skill">
                 <b>Internal tools</b>
-                <span>Google Apps Script · Google Workspace</span>
+                <span>Google Apps Script · Google Workspace · SalesForces · Zendesk</span>
               </div>
               <div className="skill">
                 <b>Ad measurement</b>
