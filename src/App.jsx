@@ -47,7 +47,7 @@ function App() {
 
               <a
                 className="button secondary"
-                href="/files/CV_JamesIgnas.pdf"
+                href="/jamesignas/files/CV_JamesIgnas.pdf"
                 download="CV_JamesIgnas.pdf"
               >
                 Download CV ↓
