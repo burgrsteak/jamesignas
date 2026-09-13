@@ -67,7 +67,7 @@ I evaluate AI chatbot conversations by comparing responses with available resour
 | Internal tools | Google Apps Script, Google Workspace, Google Sheets |
 | Digital advertising | Campaign operations, tracking setup, troubleshooting, creative QA |
 | Measurement | Pixels, events, conversion tracking, discrepancy checks, signal integrity |
-| Snap implementation | Manual integration, Google Tag Manager, Shopify, WooCommerce, Conversion API validation |
+| Pixel implementation (Snapchat ads) | Manual integration, Google Tag Manager, Shopify, WooCommerce, Conversion API validation |
 | Quality evaluation | Website functional testing, publisher readiness, AI response factuality review |
 | Currently learning | React, Node.js, APIs, modern frontend development |
 
