@@ -557,3 +557,47 @@ footer {
     margin-top: 10px;
   }
 }
+
+/* Consistent centered presentation for the hero section */
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  max-width: 900px;
+  text-align: center;
+}
+
+.hero .intro {
+  text-align: center;
+}
+
+.hero .actions {
+  justify-content: center;
+}
+
+/* Consistent centered presentation for the contact card */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-box h2,
+.contact-box p {
+  text-align: center;
+}
+
+.contact-box .actions {
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .hero h1 {
+    max-width: 100%;
+  }
+}
