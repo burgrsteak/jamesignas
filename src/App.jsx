@@ -48,9 +48,10 @@ function App() {
               <a
                 className="button secondary"
                 href="/jamesignas/files/CV_JamesIgnas.pdf"
-                download="CV_JamesIgnas.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Download CV ↓
+                View / Download CV ↗
               </a>
             </div>
           </div>
