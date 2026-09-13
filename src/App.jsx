@@ -320,8 +320,8 @@ function App() {
 
       <footer>
         <div className="container footer-inner">
-          <p>© 2026 James. Digital ads & web solutions.</p>
-          <p>Taguig, Philippines · Available remotely</p>
+          <p>© 2026 James. Technical Ads SUpport Specialist.</p>
+          <p>NCR, Philippines · Available remotely</p>
         </div>
       </footer>
     </>
